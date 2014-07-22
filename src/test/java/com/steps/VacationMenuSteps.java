@@ -1,7 +1,7 @@
 package com.steps;
 
 import com.pages.LoginPage;
-
+import com.pages.VacationMenuPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
@@ -9,9 +9,10 @@ import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 
 @SuppressWarnings("serial")
-public class LoginSteps extends ScenarioSteps {
+public class VacationMenuSteps extends ScenarioSteps {
 
 	LoginPage loginPage;
+	VacationMenuPage vacationMenuPage;
 
     @Step
     public void open() {
@@ -37,6 +38,24 @@ public class LoginSteps extends ScenarioSteps {
     public void select_vacation_tab() {
     	loginPage.click_vacation();
     }
+    public void select_newVacation()
+    {
+    	vacationMenuPage.click_newVacation();
+    }
+    public void select_myRequest()
+    {
+    	vacationMenuPage.click_myRequests();
+    }
+    public void select_myFreeDays()
+    {
+    	vacationMenuPage.click_myFreeDays();
+    }
+    public void select_freeDaysHistory()
+    {
+    	vacationMenuPage.click_freeDaysHistory();
+    }
+    
+    
     
     @StepGroup
     public void login(String username, String password) {
@@ -45,5 +64,6 @@ public class LoginSteps extends ScenarioSteps {
     	enter_password(password);
     	submit();
     	select_vacation_tab();
+    	
     }
 }

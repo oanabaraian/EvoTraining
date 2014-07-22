@@ -6,7 +6,7 @@ import net.thucydides.core.pages.PageObject;
 import net.thucydides.core.pages.WebElementFacade;
 
 //@DefaultUrl("http://en.wiktionary.org/wiki/Wiktionary:Main_Page")
-public class VacationMenu extends PageObject {
+public class VacationMenuPage extends PageObject {
 
     @FindBy(css="ul.nav-list li:nth-child(2) a")
     private WebElementFacade newVacationLink;
