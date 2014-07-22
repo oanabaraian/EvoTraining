@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.requirements.Application;
 import com.steps.LoginSteps;
+import com.steps.VacationMenuSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
@@ -27,9 +28,15 @@ public class CreateVacationTest {
 
     @Steps
     public LoginSteps loginSteps;
+    
+    @Steps
+    public VacationMenuSteps vacationMenuSteps;
+
 
     @Test
     public void createSimpleVacation() {
     	loginSteps.login("ciprian.mocian", "test");
+    	vacationMenuSteps.select_newVacation();
+    	
     }
 } 
