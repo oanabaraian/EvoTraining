@@ -38,18 +38,22 @@ public class VacationMenuSteps extends ScenarioSteps {
     public void select_vacation_tab() {
     	loginPage.click_vacation();
     }
+    @Step
     public void select_newVacation()
     {
     	vacationMenuPage.click_newVacation();
     }
+    @Step
     public void select_myRequest()
     {
     	vacationMenuPage.click_myRequests();
     }
+    @Step
     public void select_myFreeDays()
     {
     	vacationMenuPage.click_myFreeDays();
     }
+    @Step
     public void select_freeDaysHistory()
     {
     	vacationMenuPage.click_freeDaysHistory();

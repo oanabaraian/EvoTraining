@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 
-import co.requirements.Application;
+import com.requirements.Application;
 import com.steps.LoginSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
