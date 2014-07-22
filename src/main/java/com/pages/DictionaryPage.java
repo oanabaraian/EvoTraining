@@ -1,4 +1,4 @@
-package com.MyFirstThucydidesProject.pages;
+package com.pages;
 
 import ch.lambdaj.function.convert.Converter;
 import net.thucydides.core.annotations.DefaultUrl;

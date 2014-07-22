@@ -1,4 +1,4 @@
-package com.MyFirstThucydidesProject;
+package com;
 
 import net.thucydides.core.annotations.Issue;
 import net.thucydides.core.annotations.ManagedPages;
@@ -13,8 +13,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.MyFirstThucydidesProject.requirements.Application;
-import com.MyFirstThucydidesProject.steps.EndUserSteps;
+import com.requirements.Application;
+import com.steps.EndUserSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)

@@ -1,4 +1,4 @@
-package com.MyFirstThucydidesProject.requirements;
+package com.requirements;
 
 import net.thucydides.core.annotations.Feature;
 
