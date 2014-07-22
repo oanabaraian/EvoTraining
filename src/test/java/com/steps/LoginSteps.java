@@ -1,10 +1,11 @@
 package com.steps;
 
+import com.pages.LoginPage;
+
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
+import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
-
-import com.pages.LoginPage;
 
 @SuppressWarnings("serial")
 public class LoginSteps extends ScenarioSteps {

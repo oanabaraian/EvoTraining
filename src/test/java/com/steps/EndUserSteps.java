@@ -1,18 +1,20 @@
 package com.steps;
 
-import com.pages.DictionaryPage;
-import net.thucydides.core.annotations.Step;
-import net.thucydides.core.pages.Pages;
-import net.thucydides.core.steps.ScenarioSteps;
-
-import static ch.lambdaj.Lambda.join;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasItem;
+import net.thucydides.core.annotations.Step;
+import net.thucydides.core.steps.ScenarioSteps;
+
+import com.pages.DictionaryPage;
 
 public class EndUserSteps extends ScenarioSteps {
 
-    DictionaryPage dictionaryPage;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	DictionaryPage dictionaryPage;
 
     @Step
     public void enters(String keyword) {

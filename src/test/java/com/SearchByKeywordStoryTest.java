@@ -13,7 +13,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.requirements.Application;
+
+import co.requirements.Application;
+
 import com.steps.EndUserSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
