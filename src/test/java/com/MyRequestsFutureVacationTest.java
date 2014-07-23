@@ -1,5 +1,8 @@
 package com;
 
+import java.text.ParseException;
+import java.util.Date;
+
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
@@ -19,7 +22,7 @@ import com.steps.VacationMenuSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
-public class MyRequestsFilterTest {
+public class MyRequestsFutureVacationTest {
 
     @Managed(uniqueSession = true)
     public WebDriver webdriver;
@@ -38,13 +41,16 @@ public class MyRequestsFilterTest {
 
 
     @Test
-    public void checkResultsVacationFilter() {
+    public void checkResultsVacationFilter() throws ParseException {
     	loginSteps.login("oana.baraian", "1Nteresant!");
     	vacationMenuSteps.select_myRequest();
-    	myRequestsSteps.check_oneToFiveDays();
+    	myRequestsSteps.check_futureVacation();
     	myRequestsSteps.apply();
-    	myRequestsSteps.select_items_per_page("75");
-    	myRequestsSteps.chech_days_number_in_range(1,6);
+    	myRequestsSteps.check_future_start_date(new Date());
+    	
     	
     }
+
+
+	
 } 
