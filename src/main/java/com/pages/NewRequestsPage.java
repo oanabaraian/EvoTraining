@@ -4,6 +4,8 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import junit.framework.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -28,17 +30,15 @@ public class NewRequestsPage extends PageObject {
 
 	@FindBy(css = "input[value='Save']")
 	private WebElementFacade save;
-	
+
 	@FindBy(css = "input[value='VACATION_WITHOUT_PAYMENT'][type='checkbox']")
 	private WebElementFacade checkboxWithoutPayment;
-	
+
 	@FindBy(css = "input[value='PENDING'][type='checkbox']")
 	private WebElementFacade checkboxPending;
-	
-	
-	
+
 	public CalendarPage calendar;
-	
+
 	public VacationMenuPage myRequests;
 
 	public void checkHoliday() {
@@ -54,59 +54,63 @@ public class NewRequestsPage extends PageObject {
 	public void clikStartDate() {
 		element(start).waitUntilVisible();
 		start.click();
-		
-		
+
 	}
 
 	public void clikEndDate() {
 		element(end).waitUntilVisible();
 		end.click();
-		
+
 	}
 
 	public void clikSave() {
 		element(save).waitUntilVisible();
 		save.click();
 	}
-	
-	public void selectStartDate(int month, int day, int year) throws ParseException{
+
+	public void selectStartDate(int month, int day, int year)
+			throws ParseException {
 		calendar.setDate(month, day, year);
 	}
-	
-	public void selectEndDate(int month, int day, int year) throws ParseException{
+
+	public void selectEndDate(int month, int day, int year)
+			throws ParseException {
 		element(end).waitUntilVisible();
 		calendar.setDate(month, day, year);
-		
+
 	}
-	
-	public void clickRequestsPage(){
+
+	public void clickRequestsPage() {
 		myRequests.click_myRequests();
 	}
-	
-	public void checkWithoutPaymentFilter(){
+
+	public void checkWithoutPaymentFilter() {
 		element(checkboxWithoutPayment).waitUntilVisible();
 		checkboxWithoutPayment.click();
 	}
-	
-	public void checkPendingFilter(){
+
+	public void checkPendingFilter() {
 		element(checkboxPending).waitUntilVisible();
 		checkboxPending.click();
 	}
-	
-	
-	
-	public List<String> checkDateOnPage(){
-		List<WebElement> vacationTypeList=getDriver().findElements(By.linkText("28/07/2014"));
-		
-		List<String> stringList=new ArrayList<String>();
-		
-		for(WebElement vacationElem : vacationTypeList){
-			stringList.add(vacationElem.getText());
-		}
-		
-		return stringList;
+
+	public void checkDateOnPage(String message) {
+		WebElement vacationDateList = getDriver().findElement(
+				By.linkText("28/07/2014"));
+
+		String stringDate = vacationDateList.getText();
+
+		Assert.assertTrue("Vacation request is not present on the page",
+				stringDate.equals(message));
 	}
-	
-	
+
+	public void verifyMessage(String message) {
+		WebElement msg = getDriver().findElement(
+				By.cssSelector(".portlet-msg-error"));
+		if (!msg.getText().toLowerCase().contains(message.toLowerCase())) {
+			Assert.fail(String.format("The error message is not displayed",
+					message));
+		}
+	}
 
 }

@@ -55,8 +55,7 @@ public class OverlappingVacationTest {
 		requestVacation.endDateCalendar(7, 25, 2014);
 		requestVacation.holiday();
 		requestVacation.save();
-		
-		
+		requestVacation.verifyMessage("Your request failed to complete.");
 	}
 	
 	/*@Test

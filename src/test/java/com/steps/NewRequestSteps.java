@@ -44,45 +44,44 @@ public class NewRequestSteps extends ScenarioSteps {
 	public void save() {
 		request.clikSave();
 	}
+
 	@Step
-	public void startDateCalendar(int month, int day, int year) throws ParseException{
+	public void startDateCalendar(int month, int day, int year)
+			throws ParseException {
 		request.selectStartDate(month, day, year);
 	}
+
 	@Step
-	public void endDateCalendar(int month, int day, int year) throws ParseException{
-		
+	public void endDateCalendar(int month, int day, int year)
+			throws ParseException {
+
 		request.selectEndDate(month, day, year);
 	}
-	
+
 	@Step
-	public void myRequests(){
+	public void myRequests() {
 		request.clickRequestsPage();
 	}
-	
+
 	@Step
-	public void withoutPaymentFilter(){
+	public void withoutPaymentFilter() {
 		request.checkWithoutPaymentFilter();
 	}
-	
+
 	@Step
-	public void pendingFilter(){
+	public void pendingFilter() {
 		request.checkPendingFilter();
 	}
-	
+
 	@Step
-	public void checkIfDateIsDisplayed(String myDate){
-		List<String> list = request.checkDateOnPage();
-		
-		for(String l:list){
-			Assert.assertTrue("Vacation request is not present on the page", myDate.equals(l));
-		}
-		
+	public void checkIfDateIsDisplayed(String myDate) {
+		request.checkDateOnPage(myDate);
+
 	}
-	
+
 	@Step
-	public void checkValidityOfSelectedDate() {
-		
+	public void verifyMessage(String message) {
+		request.verifyMessage(message);
 	}
-	
 
 }
