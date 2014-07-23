@@ -22,7 +22,7 @@ import com.steps.VacationMenuSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
-public class CreateNewVacationTest {
+public class OverlappingVacationTest {
 
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
@@ -50,16 +50,12 @@ public class CreateNewVacationTest {
 		loginSteps.login("ciprian.mocian", "test");
 		vacationMenuSteps.select_newVacation();
 		requestVacation.select_start_date();
-		requestVacation.startDateCalendar(7, 28, 2014);
+		requestVacation.startDateCalendar(7, 23, 2014);
 		requestVacation.select_end_date();
-		requestVacation.endDateCalendar(7, 29, 2014);
-		requestVacation.vacationWithoutPayment();
+		requestVacation.endDateCalendar(7, 25, 2014);
+		requestVacation.holiday();
 		requestVacation.save();
-		requestVacation.myRequests();
-		requestVacation.withoutPaymentFilter();
-		requestVacation.pendingFilter();
-		myRequestsSteps.apply();
-		requestVacation.checkIfDateIsDisplayed("28/07/2014");
+		
 		
 	}
 	
