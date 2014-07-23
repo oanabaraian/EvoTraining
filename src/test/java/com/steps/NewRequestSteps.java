@@ -83,5 +83,10 @@ public class NewRequestSteps extends ScenarioSteps {
 	public void verifyMessage(String message) {
 		request.verifyMessage(message);
 	}
+	
+	@Step
+	public void withdrawButton(){
+		request.withdrawButton();
+	}
 
 }

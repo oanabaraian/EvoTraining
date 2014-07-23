@@ -36,6 +36,9 @@ public class NewRequestsPage extends PageObject {
 
 	@FindBy(css = "input[value='PENDING'][type='checkbox']")
 	private WebElementFacade checkboxPending;
+	
+	@FindBy(css = "input[value='Withdraw']")
+	private WebElementFacade withdrawButton;
 
 	public CalendarPage calendar;
 
@@ -112,6 +115,11 @@ public class NewRequestsPage extends PageObject {
 			Assert.fail(String.format("The error message is not displayed",
 					message));
 		}
+	}
+	
+	public void withdrawButton() {
+		element(withdrawButton).waitUntilVisible();
+		withdrawButton.click();
 	}
 
 }
