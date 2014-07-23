@@ -22,33 +22,31 @@ import com.steps.VacationMenuSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
-public class MyRequestsVacationHolidayTest {
+public class MyRequestsFilterDateOrderVerificationTest {
 
-    @Managed(uniqueSession=true)
+    @Managed(uniqueSession = true)
     public WebDriver webdriver;
-    
-    @ManagedPages(defaultUrl="http://192.168.1.68:9090/login")
+
+    @ManagedPages(defaultUrl = "http://192.168.1.68:9090/login")
     public Pages pages;
-    
+
     @Steps
     public LoginSteps loginSteps;
     
     @Steps
-    MyRequestsSteps myRequestsSteps;
-    
-    @Steps
     public VacationMenuSteps vacationMenuSteps;
     
-    
+    @Steps
+    MyRequestsSteps myRequestsSteps;
+
 
     @Test
     public void checkResultsVacationFilter() throws ParseException {
     	loginSteps.login("oana.baraian", "1Nteresant!");
     	vacationMenuSteps.select_myRequest();
-    	myRequestsSteps.check_holiday_Vacation_Type();
     	myRequestsSteps.apply();
     	myRequestsSteps.select_items_per_page("75");
-    	myRequestsSteps.check_vacation_type("Holiday");
+    	myRequestsSteps.check_start_date_in_right_order();
     	
     	
     }

@@ -97,6 +97,8 @@ public class MyRequestsPage extends PageObject {
 		return dateList;
 	}
 	
+	
+	
 	public List<String> check_vacation_type_list(){
 		List<WebElement> vacationTypeList=getDriver().findElements(By.cssSelector("td[class*='type']"));
 		

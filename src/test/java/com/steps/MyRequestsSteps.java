@@ -72,6 +72,16 @@ public class MyRequestsSteps extends ScenarioSteps {
 		}
 
 	}
+	@Step
+	public void check_start_date_in_right_order() throws ParseException
+	{
+		List<Date> startDateList=myRequestsPage.get_start_date_list();
+		
+		for (int i=0; i<startDateList.size();i++ ){
+			Assert.assertTrue("Dates are not sorted", startDateList.get(i).compareTo(startDateList.get(i+1)) <0 );
+			
+		}
+	}
 
 	@Step
 	public void check_vacation_type(String myVacation) {
