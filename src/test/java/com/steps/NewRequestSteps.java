@@ -67,8 +67,8 @@ public class NewRequestSteps extends ScenarioSteps {
 	}
 	
 	@Step
-	public void displayDate(){
-		display.containsText("28/07/2014");
+	public void displayDate(String day,String month, String year){
+		display.containsText(day+"/"+month+"/"+year);
 		
 	}
 	

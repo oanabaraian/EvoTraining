@@ -48,20 +48,18 @@ public class CreateNewVacationTest {
 	@Test
 	public void createSimpleVacation() throws ParseException {
 		loginSteps.login("ciprian.mocian", "test");
-//		vacationMenuSteps.select_newVacation();
-//		requestVacation.select_start_date();
-//		requestVacation.startDateCalendar(7, 28, 2014);
-//		requestVacation.select_end_date();
-//		requestVacation.endDateCalendar(7, 29, 2014);
-//		requestVacation.vacationWithoutPayment();
-//		requestVacation.save();
+		vacationMenuSteps.select_newVacation();
+		requestVacation.select_start_date();
+		requestVacation.startDateCalendar(7, 28, 2014);
+		requestVacation.select_end_date();
+		requestVacation.endDateCalendar(7, 29, 2014);
+		requestVacation.vacationWithoutPayment();
+		requestVacation.save();
 		requestVacation.myRequests();
 		requestVacation.withoutPaymentFilter();
 		requestVacation.pendingFilter();
-		
-
 		myRequestsSteps.apply();
-//		requestVacation.displayDate();
+		requestVacation.displayDate("28","07","2014");
 		
 	}
 	

@@ -90,13 +90,11 @@ public class NewRequestsPage extends PageObject {
 		checkboxPending.click();
 	}
 	
-	public void savedDate(){
+	public void checkDate(){
 		
-		 //getDriver().findElement(By.linkText("28/07/2014")).click();
+		 getDriver().findElement(By.linkText("28/07/2014"));
 	}
 	
-	public void displayInvalidMessage(){
-		
-	}
+	
 
 }
