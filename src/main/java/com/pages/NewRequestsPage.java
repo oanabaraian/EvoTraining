@@ -102,6 +102,7 @@ public class NewRequestsPage extends PageObject {
 
 		Assert.assertTrue("Vacation request is not present on the page",
 				stringDate.equals(message));
+		vacationDateList.click();
 	}
 
 	public void verifyMessage(String message) {
