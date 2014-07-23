@@ -1,6 +1,9 @@
 package com.steps;
 
 import java.text.ParseException;
+import java.util.List;
+
+import org.junit.Assert;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.WebElementFacade;
@@ -67,8 +70,12 @@ public class NewRequestSteps extends ScenarioSteps {
 	}
 	
 	@Step
-	public void displayDate(String day,String month, String year){
-		display.containsText(day+"/"+month+"/"+year);
+	public void checkIfDateIsDisplayed(String myDate){
+		List<String> list = request.checkDateOnPage();
+		
+		for(String l:list){
+			Assert.assertTrue("Vacation request is not present on the page", myDate.equals(l));
+		}
 		
 	}
 	

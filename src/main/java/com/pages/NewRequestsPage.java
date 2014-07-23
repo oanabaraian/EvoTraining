@@ -1,8 +1,11 @@
 package com.pages;
 
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
@@ -90,9 +93,21 @@ public class NewRequestsPage extends PageObject {
 		checkboxPending.click();
 	}
 	
-	public void checkDate(){
+	/*public void checkDate(){
 		
-		 getDriver().findElement(By.linkText("28/07/2014"));
+		 //getDriver().findElement(By.linkText("28/07/2014"));
+	}*/
+	
+	public List<String> checkDateOnPage(){
+		List<WebElement> vacationTypeList=getDriver().findElements(By.linkText("28/07/2014"));
+		
+		List<String> stringList=new ArrayList<String>();
+		
+		for(WebElement vacationElem : vacationTypeList){
+			stringList.add(vacationElem.getText());
+		}
+		
+		return stringList;
 	}
 	
 	

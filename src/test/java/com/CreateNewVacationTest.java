@@ -59,7 +59,7 @@ public class CreateNewVacationTest {
 		requestVacation.withoutPaymentFilter();
 		requestVacation.pendingFilter();
 		myRequestsSteps.apply();
-		requestVacation.displayDate("28","07","2014");
+		requestVacation.checkIfDateIsDisplayed("28/07/2014");
 		
 	}
 	
