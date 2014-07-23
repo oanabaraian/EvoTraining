@@ -96,7 +96,18 @@ public class MyRequestsPage extends PageObject {
 		
 		return dateList;
 	}
-
+	
+	public List<String> check_vacation_type_list(){
+		List<WebElement> vacationTypeList=getDriver().findElements(By.cssSelector("td[class*='type']"));
+		
+		List<String> stringList=new ArrayList<String>();
+		
+		for(WebElement vacationElem : vacationTypeList){
+			stringList.add(vacationElem.getText());
+		}
+		
+		return stringList;
+	}
 	// public List<String> getResults() {
 	// WebElementFacade DaysList = find(By.tagName("tr"));
 	// List<WebElement> results = DaysList.findElements(By.tagName("td(3)"));

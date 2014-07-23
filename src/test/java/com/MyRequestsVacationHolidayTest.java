@@ -22,7 +22,7 @@ import com.steps.VacationMenuSteps;
 
 @Story(Application.Search.SearchByKeyword.class)
 @RunWith(ThucydidesRunner.class)
-public class MyRequestsVacationTypeTest {
+public class MyRequestsVacationHolidayTest {
 
     @Managed(uniqueSession=true)
     public WebDriver webdriver;
@@ -45,9 +45,10 @@ public class MyRequestsVacationTypeTest {
     public void checkResultsVacationFilter() throws ParseException {
     	loginSteps.login("oana.baraian", "1Nteresant!");
     	vacationMenuSteps.select_myRequest();
-    	myRequestsSteps.check_futureVacation();
+    	myRequestsSteps.check_holiday_Vacation_Type();
     	myRequestsSteps.apply();
-    	
+    	myRequestsSteps.select_items_per_page("75");
+    	myRequestsSteps.check_vacation_type("Holiday");
     	
     	
     }

@@ -46,6 +46,7 @@ public class MyRequestsFutureVacationTest {
     	vacationMenuSteps.select_myRequest();
     	myRequestsSteps.check_futureVacation();
     	myRequestsSteps.apply();
+    	myRequestsSteps.select_items_per_page("75");
     	myRequestsSteps.check_future_start_date(new Date());
     	
     	
