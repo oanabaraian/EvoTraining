@@ -93,10 +93,7 @@ public class NewRequestsPage extends PageObject {
 		checkboxPending.click();
 	}
 	
-	/*public void checkDate(){
-		
-		 //getDriver().findElement(By.linkText("28/07/2014"));
-	}*/
+	
 	
 	public List<String> checkDateOnPage(){
 		List<WebElement> vacationTypeList=getDriver().findElements(By.linkText("28/07/2014"));
