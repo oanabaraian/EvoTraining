@@ -60,6 +60,7 @@ public class CreateNewVacationTest {
 		requestVacation.pendingFilter();
 		myRequestsSteps.apply();
 		requestVacation.checkIfDateIsDisplayed("28/07/2014");
+		requestVacation.withdrawButton();
 		
 	}
 	
